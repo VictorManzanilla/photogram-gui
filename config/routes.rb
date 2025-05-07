@@ -4,6 +4,8 @@ get("/", { :controller => "users", :action => "index"})
 ##################Users routes########################################
 get("/users", {:controller => "users", :action => "index"})
 
+get("/users/:an_id", {:controller => "users", :action => "show"})
+
 
 #######################Photo routes#################################
 

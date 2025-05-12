@@ -7,11 +7,21 @@ class UsersController < ApplicationController
   end
 
   def show
-    the_id = params.fetch("an_id")
-    match_record = User.where({:id => the_id})
+    the_username = params.fetch("input_username")
+    match_record = User.where({:username => the_username})
     @the_user = match_record.at(0)
 
     render({:template => "user_templates/show"})
+  end
+
+  def create
+    @the_user = User.new
+
+   @the_user.username = params.fetch("input_username")
+
+    @the_user.save
+
+    redirect_to("/users/#{@the_user.id}")
   end
 
   def update

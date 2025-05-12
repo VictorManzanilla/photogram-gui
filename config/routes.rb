@@ -15,4 +15,6 @@ post("/update_user/:update_username", {:controller => "users", :action => "updat
 #######################Photo routes#################################
 get("/photos", {:controller => "photos", :action => "index"})
 
+get("/photos/:an_id", {:controller => "photos", :action => "show"})
+
 end

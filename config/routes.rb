@@ -17,4 +17,6 @@ get("/photos", {:controller => "photos", :action => "index"})
 
 get("/photos/:an_id", {:controller => "photos", :action => "show"})
 
+post("/add_user", {:controller => "users", :action => "create"})
+
 end

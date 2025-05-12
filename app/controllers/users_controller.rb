@@ -17,21 +17,23 @@ class UsersController < ApplicationController
   def create
     @the_user = User.new
 
-   @the_user.username = params.fetch("input_username")
+    @the_user.username = params.fetch("input_username")
 
     @the_user.save
 
-    redirect_to("/users/#{@the_user.id}")
+    redirect_to("/users/#{@the_user.username}")
   end
 
   def update
-    the_id = params.fetch("an_id")
-    the_user = User.find(the_id)
+    the_username = params.fetch("update_username")
+    match_record = User.where({:username => the_username})
+    @the_user = match_record.at(0)
 
-    the_user.username = params.fetch("input_username")
 
-    the_user.save
+    @the_user.username = params.fetch("input_username")
 
-    redirect_to("/users/#{the_user.id}")
+    @the_user.save
+
+    redirect_to("/users/#{@the_user.username}")
   end
 end

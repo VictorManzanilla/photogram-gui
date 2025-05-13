@@ -26,6 +26,19 @@ class PhotosController < ApplicationController
 
   end
 
+  def update
+    the_id = params.fetch("an_id")
+    photo_details = Photo.find(the_id)
+
+    photo_details.image = params.fetch("input_image")
+    photo_details.caption = params.fetch("input_caption")
+
+    photo_details.save
+
+    redirect_to("/photos/#{photo_details.id}")
+
+  end
+
   def destroy
     the_id = params.fetch("an_id")
     photo_destroy = Photo.find(the_id)

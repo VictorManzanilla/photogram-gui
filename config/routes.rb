@@ -22,6 +22,7 @@ get("/delete_photo/:an_id", {:controller => "photos", :action => "destroy"})
 
 post("/insert_photo_record", {:controller => "photos", :action => "create"})
 
+post("/update_photo/:an_id", {:controller => "photos", :action => "update"})
 
 
 end

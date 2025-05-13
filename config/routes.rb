@@ -17,6 +17,11 @@ get("/photos", {:controller => "photos", :action => "index"})
 
 get("/photos/:an_id", {:controller => "photos", :action => "show"})
 
-post("/add_user", {:controller => "users", :action => "create"})
+get("/delete_photo/:an_id", {:controller => "photos", :action => "destroy"})
+
+
+post("/insert_photo_record", {:controller => "photos", :action => "create"})
+
+
 
 end

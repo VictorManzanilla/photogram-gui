@@ -24,5 +24,7 @@ post("/insert_photo_record", {:controller => "photos", :action => "create"})
 
 post("/update_photo/:an_id", {:controller => "photos", :action => "update"})
 
+post("/add_comment", {:controller => "photos", :action => "create_comment"})
+
 
 end
